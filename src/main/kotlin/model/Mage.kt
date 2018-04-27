@@ -1,6 +1,5 @@
 package model
 
-// extension
 fun Mage.callMyFather() : Mage{
     if (this.firstName == "Gandalf") {
         this.fatherName = "J. R. R. Tolkien"
@@ -8,28 +7,22 @@ fun Mage.callMyFather() : Mage{
     return this
 }
 
-    /**
-     * Class attributes on kotlin, must be initialized unless they are on a constructor,
-     * avoiding this way null initializations
-     *
-     * @author Ivan A. Reffatti
-     */
-    data class Mage(
+/**
+ * Class attributes on kotlin, must be initialized unless they are on a constructor,
+ * avoiding this way null initializations
+ *
+ * @author Ivan A. Reffatti
+ */
+data class Mage(
+        val firstName : String,
+        val surName : String,
+        val age : Int) : Race("Mage", "$firstName $surName")
+{
 
-            val firstName : String,
+    var fatherName : String? = null
 
-            val surName : String,
-
-            val age : Int
-    ) {
-
-        var fatherName : String? = null
-
-        companion object {
-            fun create() = Mage("Gandalf", "The Gray", 1000)
-        }
-
+    companion object {
+        fun create() = Mage("Gandalf", "The Gray", 1000)
     }
 
-
-
+}

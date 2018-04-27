@@ -1,18 +1,17 @@
 package tricks.erasure
 
 /**
- *
  * @author Ivan A. Reffatti
- * @since 12/04/18
  */
 class Erasure {
 
     fun doAction(any: List<String>) {
-
+        TODO("implement it")
     }
 
     @JvmName("doActionWithInt")
     fun doAction(any: List<Int>) {
-
+        TODO("implement it")
     }
 }
+

@@ -1,4 +1,7 @@
 import model.Mage
+import model.Mordor
+import model.Race
+import model.UrukHai
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -70,6 +73,17 @@ class KotlinLanguageUnitTests {
         assertNull(gandalfTheGray.fatherName?.length)
     }
 
+    @Test
+    fun `is something casts automatically to compared type`() {
+
+        val race: Race = Mordor().produceUrukHai()
+
+        assertEquals("Uruk Hai", race.specie)
+
+        if ( race is UrukHai) {
+            assertEquals("Mace", race.weapon)
+        }
+    }
 
     @Nested
     inner class ScopedOnes {
