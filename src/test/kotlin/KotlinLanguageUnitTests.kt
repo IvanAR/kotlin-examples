@@ -161,7 +161,7 @@ class KotlinLanguageUnitTests {
         }
 
         @Test
-        fun `And at last, apply for creating instances`() {
+        fun `and at last, apply for creating instances`() {
 
             // commonly used for post constructing objects
             val gandalf = Mage(GANDALF,THE_GRAY, 2019)
@@ -171,6 +171,15 @@ class KotlinLanguageUnitTests {
 
             assertEquals(GANDALF, gandalf.firstName)
             assertEquals(JRR_TOLKIEN, gandalf.fatherName)
+
+        }
+
+        @Test
+        fun `elvis operator helps you on assinging values`() {
+
+            val fatherName = gandalfTheGray.fatherName ?: JRR_TOLKIEN
+
+            assertEquals(JRR_TOLKIEN, fatherName)
 
         }
     }
